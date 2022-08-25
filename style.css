@@ -1,0 +1,307 @@
+:root {
+  --clr-accent: hsl(25, 97%, 53%);
+
+  --clr-heading: hsl(0, 0%, 100%);
+  --clr-primary: hsl(217, 12%, 63%);
+
+  --clr-bg-body: hsl(216, 12%, 8%);
+  --clr-bg-rating-component-start: hsl(213, 19%, 18%);
+  --clr-bg-rating-component-end: hsl(214, 12%, 12%);
+
+  --clr-button: hsl(0, 0%, 100%);
+  --clr-button-hover: hsl(25, 97%, 53%);
+  --clr-bg-button: hsl(25, 97%, 53%);
+  --clr-bg-button-hover: hsl(0, 0%, 100%);
+
+  --clr-rating: hsl(0, 0%, 100%);
+  --clr-bg-rating: hsl(208, 15%, 25%);
+  --clr-bg-rating-hover: hsl(217, 12%, 63%);
+  --clr-bg-rating-checked: hsl(25, 97%, 53%);
+
+  --fs-primary: 0.9375rem;
+  --fs-heading: 2rem;
+
+  --fw-primary: 400;
+  --fw-heading: 700;
+
+  --ff-primary: "Overpass", sans-serif;
+}
+
+/* ------------------ */
+/*       RESET        */
+/* ------------------ */
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------- */
+/* GENERAL STYLING  */
+/* ---------------- */
+
+body {
+  background-color: var(--clr-bg-body);
+  font-size: var(--fs-primary);
+  font-weight: var(--fw-primary);
+  font-family: var(--ff-primary);
+  color: var(--clr-primary);
+}
+
+.component {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------STYLING RATING COMPONENT------- */
+.component__rating {
+  height: 26rem;
+  width: 25rem;
+  background: linear-gradient(
+    var(--clr-bg-rating-component-start),
+    var(--clr-bg-rating-component-end)
+  );
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.component__star {
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--clr-bg-rating);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.component__heading {
+  font-size: var(--fs-heading);
+  color: var(--clr-heading);
+  font-weight: var(--fw-heading);
+  line-height: 0;
+}
+
+.component__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.component__form-radiogroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.component__form-radio {
+  appearance: none;
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--clr-bg-rating);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.component__form-radio:hover {
+  cursor: pointer;
+  background-color: var(--clr-bg-rating-hover);
+  scale: 1.1;
+}
+.component__form-radio:checked {
+  background-color: var(--clr-bg-rating-checked);
+}
+
+.component__form-radio:after {
+  color: var(--clr-rating);
+}
+
+/* Put numbers inside the radio buttons */
+.component__form-radio:nth-of-type(1):after {
+  content: "1";
+}
+.component__form-radio:nth-of-type(2):after {
+  content: "2";
+}
+.component__form-radio:nth-of-type(3):after {
+  content: "3";
+}
+.component__form-radio:nth-of-type(4):after {
+  content: "4";
+}
+.component__form-radio:nth-of-type(5):after {
+  content: "5";
+}
+
+.component__form-submit-btn {
+  height: 3rem;
+  width: 100%;
+  background-color: var(--clr-bg-button);
+  color: var(--clr-button);
+  border-radius: 1.8rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+}
+
+.component__form-submit-btn:hover {
+  background-color: var(--clr-bg-button-hover);
+  color: var(--clr-button-hover);
+  transition: all 0.3s ease-in-out;
+  scale: 1.1;
+}
+
+/* Hide all labels in the radio group */
+/* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
+}
+
+/* --------STYLING THANK COMPONENT-------- */
+.component__thank {
+  height: 26rem;
+  width: 25rem;
+  background: linear-gradient(
+    var(--clr-bg-rating-component-start),
+    var(--clr-bg-rating-component-end)
+  );
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+  display: none;
+}
+
+.component__thank-feedback {
+  background-color: var(--clr-bg-rating);
+  padding: 0.2rem 0.8rem;
+  border-radius: 1rem;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+.component__thank-heading {
+  font-size: var(--fs-heading);
+  color: var(--clr-heading);
+  font-weight: var(--fw-heading);
+  line-height: 0;
+}
+
+.component__thank-message {
+  text-align: center;
+}
+
+/* -------mobile design-------- */
+@media (max-width: 30em) {
+  .component__rating {
+    height: 25rem;
+    width: 16rem;
+    padding: 2rem 1.5rem;
+  }
+  .component__thank {
+    height: 25rem;
+    width: 16rem;
+    padding: 2rem 1.5rem;
+  }
+  .component__heading {
+    font-size: 1.7rem;
+  }
+  .component__form {
+    gap: 1.5rem;
+  }
+  .component__form-radio,
+  .component__star {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}

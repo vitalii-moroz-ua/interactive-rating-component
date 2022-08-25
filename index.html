@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="component">
+      <!-- Rating state start -->
+
+      <div class="component__rating">
+        <div class="component__star">
+          <img src="images/icon-star.svg" alt="" srcset="" />
+        </div>
+        <h2 class="component__heading">How did we do?</h2>
+        <p class="component__message">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <form action="" class="component__form" novalidate>
+          <div class="component__form-radiogroup">
+            <label for="one" class="sr-only">Choose one</label>
+            <input
+              id="one"
+              class="component__form-radio"
+              type="radio"
+              name="rating"
+              value="1"
+            />
+
+            <label for="two" class="sr-only">Choose two</label>
+            <input
+              id="two"
+              class="component__form-radio"
+              type="radio"
+              name="rating"
+              value="2"
+            />
+
+            <label for="three" class="sr-only">Choose three</label>
+            <input
+              id="three"
+              class="component__form-radio"
+              type="radio"
+              name="rating"
+              value="3"
+            />
+
+            <label for="four" class="sr-only">Choose four</label>
+            <input
+              id="four"
+              class="component__form-radio"
+              type="radio"
+              name="rating"
+              value="4"
+            />
+
+            <label for="five" class="sr-only">Choose five</label>
+            <input
+              id="five"
+              class="component__form-radio"
+              type="radio"
+              name="rating"
+              value="5"
+            />
+          </div>
+          <button type="submit" class="component__form-submit-btn">
+            Submit
+          </button>
+        </form>
+      </div>
+      <!-- Rating state end -->
+
+      <!-- Thank you state start -->
+      <div class="component__thank">
+        <img
+          class="component__thank-img"
+          src="images/illustration-thank-you.svg"
+          alt=""
+        />
+        <p class="component__thank-feedback">
+          You selected <span class="component__thank-feedback-number">5</span>
+          out of 5
+        </p>
+        <h2 class="component__thank-heading">Thank you!</h2>
+        <p class="component__thank-message">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </div>
+      <!-- Thank you state end -->
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
