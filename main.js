@@ -16,7 +16,7 @@ form.addEventListener("submit", function (e) {
     ratingComponent.style.display = "none";
     thankComponent.style.display = "flex";
   } else {
-    window.alert("Please pick a number");
+    // window.alert("Please pick a number");
   }
 });
 

@@ -26,14 +26,14 @@
 
       <div class="component__rating">
         <div class="component__star">
-          <img src="images/icon-star.svg" alt="" srcset="" />
+          <img src="images/icon-star.svg" alt="" />
         </div>
         <h1 class="component__heading">How did we do?</h1>
         <p class="component__message">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <form action="" class="component__form" novalidate>
+        <form class="component__form">
           <div class="component__form-radiogroup">
             <label for="one" class="sr-only">Choose one</label>
             <input
@@ -42,6 +42,7 @@
               type="radio"
               name="rating"
               value="1"
+              required
             />
 
             <label for="two" class="sr-only">Choose two</label>
